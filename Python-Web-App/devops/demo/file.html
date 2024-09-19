@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; /* Remove default body margin to reduce scrolling */
+  padding: 0;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 15px; /* Reduce padding to make header smaller */
+  text-align: center;
+  font-size: 24px; /* Reduce font size to save space */
+  color: yellow;
+  margin-bottom: 10px; /* Add a small margin below header */
+}
+
+/* Style the main section */
+section {
+  padding: 10px 20px; /* Reduce padding to fit more content */
+  text-align: left; /* Ensure left alignment for text in section */
+}
+
+/* Style the articles */
+article {
+  background-color: #f1f1f1;
+  padding: 15px; /* Reduce padding to fit more content */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Reduce space between articles */
+}
+
+/* Style the social links */
+.social-links {
+  text-align: center; /* Center the links horizontally */
+  margin-bottom: 15px; /* Reduce space between social links and footer */
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 16px; /* Reduce padding to fit more content */
+  background-color: #ccc;
+  border-radius: 5px;
+  margin: 0 8px; /* Reduce space between links */
+}
+
+.social-links a:hover {
+  background-color: #aaa;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 8px; /* Reduce padding */
+  text-align: center;
+  color: black;
+}
+
+/* Responsive layout - stacks the columns on small screens */
+@media (max-width: 600px) {
+  section {
+    text-align: center; /* Ensure center alignment on small screens */
+  }
+  .social-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically on small screens */
+    align-items: center; /* Center links horizontally on small screens */
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Containerize Django Application</h2>
+</header>
+
+<section>
+  
+  <article>
+    <h1>Prerequisites</h1>
+    <p>First install Python and Pip on your Operating System or EC2 instance or any VM.</p>
+    <p>Install Django using pip/python; Globally or Virtual Environment(recommended).</p>
+    <p>To verify installation, run {$django-admin --version} command.</p>
+    <p>Create your project by running the command: {$django-admin startproject [project-name]}.</p>
+    <p>Create your application by running the command: {$python3 manage.py startapp [application-name]}.</p>
+    <p>Create a templetes folder in your application and store your HTML or CSS file. (application/template/file.html)</p>
+    <p>Create a simple python function to render your HTML file.</p>
+
+  </article>
+  <article>
+    <h1>Containerize Django Application</h1>
+    <p>First create a Docker File with set of instructions to build a Docker Image.</p>
+    <p>Submit your Docker File to Docker Daemon using 'Build' command to create Image.</p>
+    <p>Your Image  is ready and to create your Docker Container, use 'Run' command.</p>
+    <p>This docker container is your final output, which contains your application, application libraries, and system dependencies.</p>
+    <p>Share your Docker Container Image to Docker Hub using 'Push' command.</p>
+    <p>Alright your application is now public.</p>
+
+  </article>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/deepakmandepudi">LinkedIn</a>
+    <a href="https://x.com/i_deepscripts">Twitter</a>
+  </div>
+</section>
+
+<footer>
+  <p>@Deepak Kumar</p>
+</footer>
+
+</body>
+</html>
