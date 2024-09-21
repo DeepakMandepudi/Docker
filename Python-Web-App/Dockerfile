@@ -13,7 +13,7 @@ COPY devops /app
 ENTRYPOINT ["python3"]
 CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 
-
+# We can also use Ubuntu as base image if we want all the rich dependencies
 # FROM ubuntu
 
 # WORKDIR /app
