@@ -4,6 +4,9 @@
 
 FROM ubuntu AS build
 
+# We can use a CentOS or Red Hat flavored UBI/UBI-Minimal or even a Golang base image as well.
+# However, we cannot reduce the size of the image in the same way that multi-stage builds do.
+
 RUN apt-get update && apt-get install -y golang-go
 
 ENV GO111MODULE=off
