@@ -25,6 +25,22 @@ This results in:
 - **Drastic Reduction in Image Size**: Only the essential files and the Go binary are included in the final image.
 - **Increased Security**: Fewer components mean fewer potential vulnerabilities.
 
+## Verify Images on Docker Hub
+
+You can check the size of both images (`golang-calculator-with-multistage` and `golang-calculator-without-multistage`) by pulling them from Docker Hub.
+
+### Pull Images
+
+- **With Multi-stage Build**:
+   
+  ```bash
+  docker pull deepscripts/golang-calculator-with-multistage:latest
+
+- **Without Multi-stage Build**:
+   
+  ```bash
+  docker pull deepscripts/golang-calculator-without-multistage:latest
+
 ## Conclusion
 
 With Go’s static compilation and the power of multi-stage Docker builds, we can achieve lightweight, secure, and performant container images.
