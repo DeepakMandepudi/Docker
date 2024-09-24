@@ -24,6 +24,106 @@ This project demonstrates how to set up an SSH connection between two Ubuntu con
 
 ## Commands
 
-### 1. Pull the Ubuntu image from Docker Hub:
-```bash
-docker pull ubuntu
+- **Pull the Ubuntu image from Docker Hub:**
+   
+  ```bash
+  docker pull ubuntu
+
+- **Verify the Images**
+   
+  ```bash
+  docker images
+
+- **Create a project directory and navigate to it:**
+   
+  ```bash
+  mkdir Project && cd Project
+
+- **Run container1:**
+   
+  ```bash
+  docker run -it --name container1 ubuntu
+
+- **Install SSH server in container1:**
+   
+  ```bash
+  apt-get update && apt-get install openssh-server
+
+- **Configure SSH in container1:**
+   
+  ```bash
+  apt-get install vim -y && vim /etc/ssh/sshd_config
+
+- In the config file, uncomment:
+
+  - PermitRootLogin yes
+
+
+
+
+
+- **Restart SSH server in container1:**
+   
+  ```bash
+  service ssh start && service --status-all
+
+- **Exit container1:**
+   
+  ```bash
+  exit
+
+- **Create container2 and install SSH client:**
+   
+  ```bash
+  docker run -it --name container2 ubuntu
+  apt-get update && apt-get install openssh-client
+  exit
+
+- **Set a new password for the root user in container1:**
+
+    - Start container1 and access it:
+      
+  ```bash
+  docker start container1 && docker exec -it container1 bash
+- Set new password:
+  ```bash
+  passwd root 
+
+ - Exit container1:
+      ```bash
+   exit      
+- **Retrieve the IP address of container1:**
+   
+  ```bash
+  docker inspect container1 | grep IPAddress
+
+- **Connect from container2 to container1:**
+   
+  ```bash
+  docker start container2 && docker exec -it container2 bash
+
+- **SSH into container1 using its IP address:**
+   
+  ```bash
+  ssh root@<IPAddress_of_container1>
+
+- **Troubleshoot if connection is refused:**
+     - Ensure SSH service is running in container1:
+       ```bash
+       docker exec -it container1 bash
+       service --status-all
+       service ssh start
+       exit
+
+- **Retry SSH connection from container2:**
+    ```bash
+    docker exec -it container2 bash
+    ssh root@<IPAddress_of_container1>
+
+
+## Success! You have successfully enabled the SSH connection between two Docker containers.
+
+
+#### The Below Image shows the successful SSH connection between ubuntu docker container1 and container2.
+![Screenshot](URL_OF_YOUR_IMAGE)
+
