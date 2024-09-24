@@ -85,7 +85,7 @@ This project demonstrates how to set up an SSH connection between two Ubuntu con
       
   ```bash
   docker start container1 && docker exec -it container1 bash
-- Set new password:
+- Set a new password:
   ```bash
   passwd root 
 
@@ -124,6 +124,6 @@ This project demonstrates how to set up an SSH connection between two Ubuntu con
 ## Success! You have successfully enabled the SSH connection between two Docker containers.
 
 
-#### The Below Image shows the successful SSH connection between ubuntu docker container1 and container2.
-![Screenshot](URL_OF_YOUR_IMAGE)
+#### The Below Image shows the successful SSH connection between Ubuntu Docker container1 and container2.
+![Screenshot](https://github.com/DeepakMandepudi/Docker/blob/main/SSH-Connection/SSH-Connection-Screenshot.png)
 
